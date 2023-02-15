@@ -1,0 +1,14 @@
+@use "src/assets/styles/variables" as var;
+
+footer {
+  height: 4rem;
+  background-color: var.$white;
+  display: flex;
+  justify-content: flex-end;
+  padding: var.$space-sm;
+  align-items: center;
+}
+
+.about-author-btn {
+  margin: var.$space-sm;
+}
