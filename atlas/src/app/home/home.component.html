@@ -1,0 +1,10 @@
+<div class="regions-container">
+  <a
+    *ngFor="let region of regions"
+    mat-raised-button
+    color="primary"
+    [routerLink]="['/', 'region', region.id]"
+    class="region"
+    >{{ region.name }}</a
+  >
+</div>
