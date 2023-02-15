@@ -1,4 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@use "src/assets/styles/variables" as var;
+
+@font-face {
+  font-family: "Rosario";
+  src: url("assets/Rosario-Regular.ttf");
+}
 
 html,
 body {
@@ -8,5 +14,6 @@ body {
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Rosario", sans-serif;
+  background-color: var.$primary-color;
 }
