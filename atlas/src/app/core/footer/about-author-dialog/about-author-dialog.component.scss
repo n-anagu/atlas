@@ -1,0 +1,18 @@
+@use "src/assets/styles/variables" as var;
+
+.smile {
+  display: block;
+  margin: auto;
+  padding: var.$space-sm;
+}
+
+.dialog-content {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.dialog-actions {
+  padding: 0 2.4rem 2.4rem 2.4rem;
+  display: flex;
+  justify-content: flex-end;
+}
