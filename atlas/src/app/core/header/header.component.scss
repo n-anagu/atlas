@@ -1,7 +1,9 @@
 @use "src/assets/styles/variables" as var;
 
 .toolbar {
-  padding: 2rem;
+  padding: var.$space-sm;
+  height: auto;
+  background-color: var.$white;
 }
 
 @media (min-width: var.$breakpoint-tablet) {
