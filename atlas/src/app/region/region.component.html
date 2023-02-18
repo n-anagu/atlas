@@ -1,0 +1,18 @@
+<app-view-title [title]="title"></app-view-title>
+<div class="countries-container">
+  <mat-list>
+    <mat-list-item *ngFor="let country of countries">
+      <img
+        class="flag"
+        matListItemIcon
+        [src]="country.flags.svg"
+        [alt]="country.flags.alt"
+        width="20"
+        height="20"
+      />
+      <div matListItemTitle class="country-name">
+        {{ country.name.common }}
+      </div>
+    </mat-list-item>
+  </mat-list>
+</div>

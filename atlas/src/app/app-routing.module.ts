@@ -8,6 +8,11 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
   },
+  {
+    path: 'region/:id',
+    loadChildren: () =>
+      import('./region/region.module').then((m) => m.RegionModule),
+  },
 ];
 
 @NgModule({
