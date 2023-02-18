@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegionRoutingModule } from './region-routing.module';
 import { MatListModule } from '@angular/material/list';
 import { SharedModule } from '../shared/shared.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [RegionComponent],
@@ -16,6 +17,7 @@ import { SharedModule } from '../shared/shared.module';
     RegionRoutingModule,
     MatListModule,
     SharedModule,
+    RouterModule,
   ],
 })
 export class RegionModule {}

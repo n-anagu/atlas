@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { regionIdParam, regionsUrlSegment } from './consts';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
@@ -9,7 +10,7 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'region/:id',
+    path: `${regionsUrlSegment}/:${regionIdParam}`,
     loadChildren: () =>
       import('./region/region.module').then((m) => m.RegionModule),
   },

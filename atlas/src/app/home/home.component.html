@@ -4,7 +4,7 @@
     *ngFor="let region of regions"
     mat-raised-button
     color="primary"
-    [routerLink]="['/', 'region', region.id]"
+    [routerLink]="['/', regionsUrlSegment, region.id]"
     class="region"
     >{{ region.name }}</a
   >

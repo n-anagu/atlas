@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { regionsUrlSegment } from '../consts';
 import { regions } from '../data';
 
 @Component({
@@ -7,6 +8,7 @@ import { regions } from '../data';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  title = 'Wybierz region';
-  regions = regions;
+  readonly title = 'Wybierz region';
+  readonly regions = regions;
+  readonly regionsUrlSegment = regionsUrlSegment;
 }

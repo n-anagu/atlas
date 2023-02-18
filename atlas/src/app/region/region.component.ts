@@ -1,8 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { countriesUrlSegment, regionIdParam } from '../consts';
 import { regions } from '../data';
-import { CountryDetails } from './model';
+import { ApiCountryDetails, CountryDetails } from '../model';
 import { RegionService } from './region.service';
 
 @Component({
@@ -14,6 +15,7 @@ export class RegionComponent implements OnInit, OnDestroy {
   countries: CountryDetails[] = [];
   rootParamsSubscription: null | Subscription = null;
   title = '';
+  readonly countriesUrlSegment = countriesUrlSegment;
 
   constructor(
     private regionService: RegionService,
@@ -22,18 +24,27 @@ export class RegionComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.rootParamsSubscription = this.route.params.subscribe((params) => {
-      this.loadCountries(params['id']);
-      this.getTitle(params['id']);
+      this.loadCountries(params[regionIdParam]);
+      this.getTitle(params[regionIdParam]);
     });
   }
 
-  loadCountries(regionId: string): void {
+  private loadCountries(regionId: string): void {
     this.regionService.getCountries(regionId).subscribe((countries) => {
-      this.countries = countries;
+      this.countries = this.addCountryNameUrlSegment(countries);
     });
   }
 
-  getTitle(regionId: string): void {
+  private addCountryNameUrlSegment(
+    countries: ApiCountryDetails[]
+  ): CountryDetails[] {
+    const modifiedCountries = countries.map((country) => {
+      return { ...country, urlSegment: country.name.common.toLowerCase() };
+    });
+    return modifiedCountries;
+  }
+
+  private getTitle(regionId: string): void {
     const region = regions.find(({ id }) => id === regionId);
     if (!region) {
       throw new Error(`could not find for region ${regionId}`);

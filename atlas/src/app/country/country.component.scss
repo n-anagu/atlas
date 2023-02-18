@@ -1,0 +1,27 @@
+@use "src/assets/styles/variables" as var;
+
+:host {
+  @include var.center-page-content;
+}
+
+.country-card {
+  width: 60rem;
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: var.$white;
+}
+
+.country-card-header {
+  display: flex;
+}
+
+.country-flag {
+  position: relative;
+  top: -22px;
+}
+
+.country-name {
+  font-size: 5rem;
+  margin-left: auto;
+  padding: 3rem;
+}
