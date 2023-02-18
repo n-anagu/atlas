@@ -1,6 +1,6 @@
-import { Region } from './model';
+import { Region } from './home/model';
 
-const regionNames = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
+export const regionNames = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
 export const regions: Region[] = regionNames.map((region) => {
   return { id: region.toLowerCase(), name: region };
 });

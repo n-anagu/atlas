@@ -1,0 +1,6 @@
+@use "src/assets/styles/variables" as var;
+
+h2 {
+  margin: var.$space-md 0;
+  text-align: center;
+}

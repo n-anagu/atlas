@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { regions } from './data';
+import { regions } from '../data';
 
 @Component({
   selector: 'app-home',
@@ -7,5 +7,6 @@ import { regions } from './data';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
+  title = 'Wybierz region';
   regions = regions;
 }
