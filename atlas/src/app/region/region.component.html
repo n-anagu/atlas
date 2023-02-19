@@ -1,22 +1,24 @@
-<app-view-title [title]="title"></app-view-title>
-<div class="countries-container">
-  <mat-nav-list>
-    <a
-      mat-list-item
-      *ngFor="let country of countries"
-      [routerLink]="[countriesUrlSegment, country.urlSegment]"
-    >
-      <img
-        class="flag"
-        matListItemIcon
-        [src]="country.flags.svg"
-        [alt]="country.flags.alt"
-        width="20"
-        height="20"
-      />
-      <div matListItemTitle class="country-name">
-        {{ country.name.common }}
-      </div>
-    </a>
-  </mat-nav-list>
-</div>
+<section>
+  <app-view-title [title]="title"></app-view-title>
+  <div class="countries-container">
+    <mat-nav-list>
+      <a
+        mat-list-item
+        *ngFor="let country of countries"
+        [routerLink]="[countriesUrlSegment, country.urlSegment]"
+      >
+        <img
+          class="flag"
+          matListItemIcon
+          [src]="country.flags.svg"
+          [alt]="country.flags.alt"
+          width="20"
+          height="20"
+        />
+        <div matListItemTitle class="country-name">
+          {{ country.name.common }}
+        </div>
+      </a>
+    </mat-nav-list>
+  </div>
+</section>
