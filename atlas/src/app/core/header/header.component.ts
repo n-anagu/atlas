@@ -10,6 +10,7 @@ import { homeUrl } from 'src/app/consts';
 })
 export class HeaderComponent implements OnInit {
   backBtnShown = false;
+  homeUrl = homeUrl;
 
   constructor(private location: Location, private router: Router) {}
 

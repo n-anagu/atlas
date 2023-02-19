@@ -1,13 +1,15 @@
 <header>
   <mat-toolbar class="toolbar">
     <h1 id="logo">
-      <img
-        class="app-logo"
-        src="/assets/logo/atlas-low-resolution-logo-black-on-white-background-cropped-min.svg"
-        alt="Atlas application"
-        width="50"
-        height="50"
-      />
+      <a [routerLink]="['/', homeUrl]">
+        <img
+          class="app-logo"
+          src="/assets/logo/atlas-low-resolution-logo-black-on-white-background-cropped-min.svg"
+          alt="Atlas application"
+          width="50"
+          height="50"
+        />
+      </a>
     </h1>
     <button
       *ngIf="backBtnShown"
