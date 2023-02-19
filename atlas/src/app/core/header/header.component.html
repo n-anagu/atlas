@@ -1,11 +1,22 @@
 <header>
   <mat-toolbar class="toolbar">
-    <img
-      class="app-logo"
-      src="/assets/logo/atlas-low-resolution-logo-black-on-white-background-cropped-min.svg"
-      alt="Application logo"
-      width="60"
-      height="60"
-    />
+    <h1 id="logo">
+      <img
+        class="app-logo"
+        src="/assets/logo/atlas-low-resolution-logo-black-on-white-background-cropped-min.svg"
+        alt="Atlas application"
+        width="50"
+        height="50"
+      />
+    </h1>
+    <button
+      *ngIf="backBtnShown"
+      mat-raised-button
+      color="secondary"
+      class="prev-page-btn"
+      (click)="goBackToPrevPage()"
+    >
+      Cofnij
+    </button>
   </mat-toolbar>
 </header>
