@@ -6,10 +6,17 @@ import { FooterComponent } from './footer/footer.component';
 import { MatButtonModule } from '@angular/material/button';
 import { AboutAuthorDialogComponent } from './footer/about-author-dialog/about-author-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, AboutAuthorDialogComponent],
-  imports: [CommonModule, MatToolbarModule, MatButtonModule, MatDialogModule],
+  imports: [
+    CommonModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatDialogModule,
+    RouterModule,
+  ],
   exports: [HeaderComponent, FooterComponent],
 })
 export class CoreModule {}

@@ -4,7 +4,7 @@
     <a
       mat-list-item
       *ngFor="let country of countries"
-      [routerLink]="['/regions', countriesUrlSegment, country.urlSegment]"
+      [routerLink]="[countriesUrlSegment, country.urlSegment]"
     >
       <img
         class="flag"
