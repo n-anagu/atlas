@@ -1,10 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @use "src/assets/styles/variables" as var;
-
-@font-face {
-  font-family: "Rosario";
-  src: url("assets/Rosario-Regular.ttf");
-}
+@use "@material/shape";
+@use "@angular/material" as mat;
 
 html,
 body {
@@ -14,6 +11,13 @@ body {
 
 body {
   margin: 0;
-  font-family: "Rosario", sans-serif;
-  background-color: var.$white-smoke;
+  font-family: "Roboto", sans-serif;
+  background-color: var.$ghost-white;
+}
+
+.atlas-container {
+  background-color: var.$white;
+  margin: 0 auto;
+  @include shape.radius(var.$shape-radius);
+  @include mat.elevation(8, var.$shadow-color, 0.2);
 }

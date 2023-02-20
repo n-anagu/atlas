@@ -1,4 +1,5 @@
 @use "src/assets/styles/variables" as var;
+@use "@angular/material" as mat;
 
 :host {
   @include var.center-page-content;
@@ -8,9 +9,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: var.$white;
   max-width: 100rem;
-  margin: 0 auto;
 }
 
 .region {
@@ -21,4 +20,5 @@
   align-items: center;
   justify-content: center;
   font-size: 1.8rem;
+  @include mat.elevation(9, var.$shadow-color, 0.8);
 }

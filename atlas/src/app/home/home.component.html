@@ -1,11 +1,13 @@
-<app-view-title [title]="title"></app-view-title>
-<div class="regions-container">
-  <a
-    *ngFor="let region of regions"
-    mat-raised-button
-    color="primary"
-    [routerLink]="['/', regionsUrlSegment, region.id]"
-    class="region"
-    >{{ region.name }}</a
-  >
-</div>
+<section>
+  <app-view-title [title]="title"></app-view-title>
+  <div class="atlas-container regions-container">
+    <a
+      *ngFor="let region of regions"
+      mat-raised-button
+      color="primary"
+      [routerLink]="['/', regionsUrlSegment, region.id]"
+      class="region"
+      >{{ region.name }}</a
+    >
+  </div>
+</section>

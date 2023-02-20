@@ -1,14 +1,17 @@
 $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1024px;
 
-$white-smoke: #eff1ed;
+$ghost-white: #f1f2fa;
 $white: #ffffff;
 $black: #000000;
-$black-olive: #3b4234;
 
 $space-sm: 1rem;
 $space-md: 2rem;
 $space-lg: 3rem;
+
+$shape-radius: 0.4rem;
+
+$shadow-color: #c5cae9;
 
 @mixin center-page-content {
   display: flex;
