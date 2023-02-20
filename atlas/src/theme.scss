@@ -1,0 +1,18 @@
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+$atlas-primary: mat.define-palette(mat.$indigo-palette, 500);
+$atlas-accent: mat.define-palette(mat.$indigo-palette, 50, 100);
+
+$atlas-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $atlas-primary,
+      accent: $atlas-accent,
+    ),
+  )
+);
+
+@include mat.core-theme($atlas-theme);
+@include mat.button-theme($atlas-theme);
