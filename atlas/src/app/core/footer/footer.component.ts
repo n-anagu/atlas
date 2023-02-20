@@ -8,7 +8,7 @@ import { AboutAuthorDialogComponent } from './about-author-dialog/about-author-d
   styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent {
-  constructor(public dialog: MatDialog) {}
+  constructor(private dialog: MatDialog) {}
 
   openDialog(): void {
     this.dialog.open(AboutAuthorDialogComponent, { width: '500px' });
