@@ -17,12 +17,16 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.backBtnShown = event.url !== `/${homeUrl}`;
+        this.backBtnShown = !this.isHomePage(event.url);
       }
     });
   }
 
   goBackToPrevPage(): void {
     this.location.back();
+  }
+
+  private isHomePage(url: string) {
+    return url === '/' || url === `/${homeUrl}`;
   }
 }
