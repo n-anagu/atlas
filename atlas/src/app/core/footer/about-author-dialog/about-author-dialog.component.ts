@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './about-author-dialog.component.html',
   styleUrls: ['./about-author-dialog.component.scss'],
 })
-export class AboutAuthorDialogComponent {
-  constructor() {}
-}
+export class AboutAuthorDialogComponent {}
