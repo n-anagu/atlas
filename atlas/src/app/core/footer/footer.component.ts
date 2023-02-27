@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import {
+  MatDialog,
+  MatDialogRef,
+  MatDialogState,
+} from '@angular/material/dialog';
 import { AboutAuthorDialogComponent } from './about-author-dialog/about-author-dialog.component';
 
 @Component({
@@ -8,9 +12,20 @@ import { AboutAuthorDialogComponent } from './about-author-dialog/about-author-d
   styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent {
+  private currentDialogRef: MatDialogRef<AboutAuthorDialogComponent> | null =
+    null;
+
   constructor(private dialog: MatDialog) {}
 
   openDialog(): void {
-    this.dialog.open(AboutAuthorDialogComponent, { width: '500px' });
+    const dialogExists = this.currentDialogRef !== null;
+    const isDialogClosed =
+      this.currentDialogRef?.getState() === MatDialogState.CLOSED;
+
+    if (!dialogExists || isDialogClosed) {
+      this.currentDialogRef = this.dialog.open(AboutAuthorDialogComponent, {
+        width: '500px',
+      });
+    }
   }
 }
