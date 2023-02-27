@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Route, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { homeUrl, regionIdParam, regionsUrlSegment } from './consts';
 import { HomeComponent } from './home/home.component';
 import { AtlasRoute } from './model-routing';
@@ -7,9 +7,6 @@ import { AtlasRoute } from './model-routing';
 const routes: AtlasRoute[] = [
   {
     path: '',
-    data: {
-      hideBackBtn: true,
-    },
     pathMatch: 'full',
     redirectTo: 'home',
   },
@@ -24,6 +21,10 @@ const routes: AtlasRoute[] = [
     path: `${regionsUrlSegment}/:${regionIdParam}`,
     loadChildren: () =>
       import('./region/region.module').then((m) => m.RegionModule),
+  },
+  {
+    path: '**',
+    redirectTo: 'home',
   },
 ];
 
