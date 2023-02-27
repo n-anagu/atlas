@@ -1,9 +1,15 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { AtlasRoute } from '../model-routing';
 
 import { CountryComponent } from './country.component';
 
-const countryRoutes: Routes = [{ path: '', component: CountryComponent }];
+const countryRoutes: AtlasRoute[] = [
+  {
+    path: '',
+    component: CountryComponent,
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forChild(countryRoutes)],

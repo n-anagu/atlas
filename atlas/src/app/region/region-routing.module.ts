@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { countriesUrlSegment, countryIdParam } from '../consts';
+import { AtlasRoute } from '../model-routing';
 
 import { RegionComponent } from './region.component';
 
-const regionRoutes: Routes = [
-  { path: '', component: RegionComponent },
+const regionRoutes: AtlasRoute[] = [
+  {
+    path: '',
+    component: RegionComponent,
+  },
   {
     path: `${countriesUrlSegment}/:${countryIdParam}`,
     loadChildren: () =>

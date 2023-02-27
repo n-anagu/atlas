@@ -1,13 +1,24 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Route, RouterModule } from '@angular/router';
 import { homeUrl, regionIdParam, regionsUrlSegment } from './consts';
 import { HomeComponent } from './home/home.component';
+import { AtlasRoute } from './model-routing';
 
-const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'home' },
+const routes: AtlasRoute[] = [
+  {
+    path: '',
+    data: {
+      hideBackBtn: true,
+    },
+    pathMatch: 'full',
+    redirectTo: 'home',
+  },
   {
     path: `${homeUrl}`,
     component: HomeComponent,
+    data: {
+      hideBackBtn: true,
+    },
   },
   {
     path: `${regionsUrlSegment}/:${regionIdParam}`,

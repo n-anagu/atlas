@@ -37,7 +37,7 @@ describe('HeaderComponent', () => {
     const fixture = TestBed.createComponent(HeaderComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    
+
     expect(
       compiled.querySelector('img.app-logo')?.getAttribute('src')
     )?.toContain(
@@ -49,7 +49,7 @@ describe('HeaderComponent', () => {
     const fixture = TestBed.createComponent(HeaderComponent);
     const compiled = fixture.nativeElement as HTMLElement;
 
-    component.backBtnShown = true;
+    component.showBackBtn = true;
     fixture.detectChanges();
 
     expect(compiled.querySelector('button.prev-page-btn')).toBeDefined;
@@ -59,7 +59,7 @@ describe('HeaderComponent', () => {
     const fixture = TestBed.createComponent(HeaderComponent);
     const compiled = fixture.nativeElement as HTMLElement;
 
-    component.backBtnShown = false;
+    component.showBackBtn = false;
     fixture.detectChanges();
 
     expect(compiled.querySelector('button.prev-page-btn')).not.toBeDefined;
